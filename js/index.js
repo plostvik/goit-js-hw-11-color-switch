@@ -17,22 +17,22 @@ const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-const startBtn = document.querySelector("[data-action=start]")
-const stopBtn = document.querySelector("[data-action=stop]")
-const body = document.querySelector("body")
+const startBtn = document.querySelector('[data-action=start]');
+const stopBtn = document.querySelector('[data-action=stop]');
+const body = document.querySelector('body');
 let timer = null;
 
-const changeColor = function(event) {
+const changeColor = function (event) {
   timer = setInterval(() => {
     body.style.backgroundColor = colors[randomIntegerFromInterval(0, 5)];
   }, 1000);
   event.target.disabled = true;
-}
+};
 
-const stopChangeColor = function() {
-  clearInterval(timer)
-  startBtn.disabled = false
-}
+const stopChangeColor = function () {
+  clearInterval(timer);
+  startBtn.disabled = false;
+};
 
-startBtn.addEventListener("click", changeColor)
-stopBtn.addEventListener("click", stopChangeColor)
+startBtn.addEventListener('click', changeColor);
+stopBtn.addEventListener('click', stopChangeColor);
